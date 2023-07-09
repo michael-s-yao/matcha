@@ -1,0 +1,168 @@
+:root {
+  --FONT: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu; 
+  --FONT-COLOR: #1f1f1f;
+  --LIGHT-DARK-TOGGLE: #7a5cce;
+  --GREEN: #50a14f; 
+  --RED: #e45649;
+  --PURPLE: #a626a4;
+  --LIGHT-PURPLE: #7c5295;
+  --YELLOW: #c18401;
+  --BROWN: #986801;
+  --BLUE: #add8e6;
+  --FADED-COLOR: rgb(31, 31, 31, 0.7);
+  --BACKGROUND-COLOR: #fdfdfd;
+  --X-SMALL: 14px;
+  --SMALL: 16px;
+  --MEDIUM: 18px;
+  --LARGE: 24px;
+  --THIN: 300;
+  --STD: 400;
+  --THICK: 600;
+}
+
+.dark-theme {
+  --FONT-COLOR: #f1f1f1;
+  --FADED-COLOR: rgb(241, 241, 241, 0.7);
+  --BACKGROUND-COLOR: #1f1f1f;
+  --LIGHT-DARK-TOGGLE: #fbd38d;
+  --LIGHT-PURPLE: #b589d6;
+  --BLUE: #1f456e;
+}
+
+html {
+  font-family: var(--FONT);
+  background-color: var(--BACKGROUND-COLOR);
+  color: var(--FONT-COLOR);
+}
+
+.light-dark-toggle {
+  width: 35px;
+  height: 35px;
+  border-radius: 7px;
+  border: 2px solid var(--LIGHT-DARK-TOGGLE);
+  background-color: transparent; 
+  color: var(--LIGHT-DARK-TOGGLE);
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  align-items: center; 
+  font-size: var(--LARGE);
+  cursor: pointer;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.light-dark-toggle:hover {
+  -webkit-transform: scale(1.02, 1.02);
+  transform: scale(1.02, 1.02);
+}
+
+body {
+  position: relative;
+  width: 60%;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 95%;
+  }
+}
+
+h1 {
+  font-size: var(--MEDIUM);
+  font-weight: var(--STD);
+  letter-spacing: 0.5px;
+  color: var(--GREEN);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--GREEN);
+  width: var(--X-SMALL);
+  height: var(--X-SMALL);
+  margin: 0 10px 0 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: max-content max-content max-content auto max-content;
+  vertical-align: bottom;
+  align-items: center;
+  position: relative;
+  margin: 0 0 2px 0;
+  padding: 2px 5px;
+  width: calc(100% - (2 * 5px));
+  border-radius: 8px;
+}
+
+.item textarea {
+  width: calc(100% - 10px);
+  font-family: var(--FONT);
+  font-size: var(--X-SMALL);
+  color: var(--FONT-COLOR);
+  letter-spacing: 0.5px;
+  margin: 2px 0;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+button.clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  font-family: var(--FONT);
+  font-size: var(--X-SMALL);
+  color: var(--FONT-COLOR);
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  padding: 5px 12px;
+  border: 1px solid var(--FONT-COLOR);
+  margin: 0;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+button.clear:hover {
+  background-color: #50a14f44;
+}
+
+hr {
+  border: 0.5px solid var(--FONT-COLOR); 
+  opacity: 0.4;
+}
+
+main i {
+  border: 1px solid var(--FONT-COLOR);
+  border-radius: 5px;
+  color: var(--FONT-COLOR);
+  background-color: var(--BACKGROUND-COLOR);
+  font-size: var(--X-SMALL);
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+
+main i.fa-clock-o {
+  padding: 3px 4px;
+}
+
+main i.fa-thumb-tack {
+  padding: 3px 6px;
+}
+
+#notes {
+  padding: 8px;
+  width: calc(100% - (2 * 5px));
+  height: 300px;
+  outline: none;
+  border: 1px solid var(--GREEN);
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font: var(--FONT);
+  color: var(--FONT-COLOR);
+  font-size: var(--X-SMALL);
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
