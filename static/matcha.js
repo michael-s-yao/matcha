@@ -239,6 +239,7 @@ function clearCompleted() {
   saveState();
 }
 
+document.getElementById("footer-current-year").innerHTML = new Date().getFullYear();
 document.addEventListener("keydown", parseTasks);
 document.addEventListener("click", parseTasks);
 initializeState();

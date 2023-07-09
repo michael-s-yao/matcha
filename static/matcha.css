@@ -60,7 +60,7 @@ html {
 body {
   position: relative;
   width: 60%;
-  margin: 50px auto;
+  margin: 50px auto 20px auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -165,4 +165,14 @@ main i.fa-thumb-tack {
   font-size: var(--X-SMALL);
   letter-spacing: 0.5px;
   line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  margin: 50px 0 0 0;
+  font: var(--FONT);
+  color: var(--FONT-COLOR);
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
 }
