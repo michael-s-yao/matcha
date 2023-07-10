@@ -132,17 +132,22 @@ function initializeState() {
   for (const listType of ["later", "today"]) {
     const tasks = getTasks(listType);
     for (var i = 0; i < tasks.length; i++) {
-      if (listType === "later" && parseInt(tasks[i]["day"]) <= daysSinceEpoch())
+      if (listType === "later" && parseInt(tasks[i]["day"]) <= daysSinceEpoch()) {
         laterToToday.push(tasks[i]);
-      else
+      } else {
         document.getElementById(listType).appendChild(
           createTask(tasks[i]["_status"], tasks[i]["flag"], tasks[i]["task"])
         );
+      }
     }
     if (laterToToday.length > 0 && listType === "today") {
       for (var i = 0; i < laterToToday.length; i++)
         document.getElementById(listType).appendChild(
-          createTask(laterToToday[i]["_status"], tasks[i]["flag"], tasks[i]["task"])
+          createTask(
+            laterToToday[i]["_status"],
+            laterToToday[i]["flag"],
+            laterToToday[i]["task"]
+          )
         );
     }
     var lastTask = createTask();
