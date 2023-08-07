@@ -108,6 +108,12 @@ input[type="checkbox"] {
   outline: none;
 }
 
+.item textarea.strike {
+  opacity: 0.5;
+  text-decoration: line-through;
+  -webkit-text-decoration: line-through;
+}
+
 button.clear {
   position: absolute;
   top: 0;

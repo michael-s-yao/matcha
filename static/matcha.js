@@ -185,18 +185,10 @@ function toggleTime(clock) {
 }
 
 function parseTasks(e) {
-  /***
-  if (document.activeElement.value !== undefined) {
-    document.activeElement.innerHTML = document.activeElement.innerHTML.replace(
-      /^#(\d+) $/gm, "<b>$1</b>"
-    );
-  }
-  ***/
-  if (e.pointerType !== undefined && document.activeElement.value === "on") {
-    var checkbox = document.activeElement;
+  if (e.type === "click" && e.target.value === "on") {
+    var checkbox = e.target;
     var textarea = checkbox.parentNode.getElementsByTagName("textarea")[0];
-    textarea.style.opacity = checkbox.checked ? "0.5" : "1.0";
-    textarea.style.textDecoration = checkbox.checked ? "line-through" : "none";
+    checkbox.checked ? textarea.classList.add("strike") : textarea.classList.remove("strike");
   }
 
   if (document.activeElement.id === "notes")
